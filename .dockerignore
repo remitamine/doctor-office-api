@@ -1,0 +1,11 @@
+Dockerfile
+.dockerignore
+node_modules
+dist
+postman-collections
+test
+.env
+.env.example
+.prettierrc
+README.md
+.git

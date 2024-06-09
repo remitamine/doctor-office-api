@@ -30,6 +30,9 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+# docker
+$ docker compose up
 ```
 
 After running the app, the API will be accessible from:

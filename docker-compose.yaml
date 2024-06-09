@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-U', 'postgres']
+  api:
+    build: .
+    environment:
+      - DOCTOR_SECRET=DOCTOR_TEST
+      - PATIENT_SECRET=PATIENT_TEST
+      - DB_HOST=postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+    ports:
+      - '3000:3000'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./src:/app/src
+    command:
+      [
+        'bash',
+        '-c',
+        'npx typeorm migration:run -d dist/data-source.js && node dist/main.js',
+      ]

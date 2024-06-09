@@ -13,9 +13,16 @@ import { AppointmentsService } from './appointments.service';
 import { CreateAppointmentDto } from './dto/create-appointment.dto';
 import { UpdateAppointmentDto } from './dto/update-appointment.dto';
 import { DoctorGuard } from '../auth/doctor.guard';
+import {
+  ApiBearerAuth,
+  ApiNotFoundResponse,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 
 @Controller('doctor/appointments')
+@ApiBearerAuth()
 @UseGuards(DoctorGuard)
+@ApiUnauthorizedResponse()
 export class AppointmentsController {
   constructor(private readonly appointmentsService: AppointmentsService) {}
 
@@ -34,21 +41,23 @@ export class AppointmentsController {
   }
 
   @Get(':id')
+  @ApiNotFoundResponse()
   findOne(@Request() req, @Param('id') id: string) {
     return this.appointmentsService.findOne(+id, req.auth.sub);
   }
 
   @Patch(':id')
-  update(
+  async update(
     @Request() req,
     @Param('id') id: string,
     @Body() updateAppointmentDto: UpdateAppointmentDto,
   ) {
-    return this.appointmentsService.update(
+    await this.appointmentsService.update(
       +id,
       updateAppointmentDto,
       req.auth.sub,
     );
+    return;
   }
 
   @Delete(':id')

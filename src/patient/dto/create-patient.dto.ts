@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import {
   IsDate,
@@ -22,6 +23,7 @@ export class CreatePatientDto {
   @IsString()
   password: string;
 
+  @ApiProperty({ format: 'date' })
   @IsDefined()
   @IsDate()
   @Type(() => Date)

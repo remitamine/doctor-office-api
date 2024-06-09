@@ -17,6 +17,12 @@ import { DoctorService } from './doctor.service';
 
 import { CreateDoctorDto } from './dto/create-doctor.dto';
 import { LoginDto } from '../common/dto/login.dto';
+import {
+  ApiBearerAuth,
+  ApiNotFoundResponse,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
+import { TokenResponse } from '../common/responses/token.response';
 
 @Controller('doctor')
 export class DoctorController {
@@ -34,7 +40,8 @@ export class DoctorController {
 
   @HttpCode(HttpStatus.OK)
   @Post('login')
-  async login(@Body() loginDto: LoginDto) {
+  @ApiNotFoundResponse()
+  async login(@Body() loginDto: LoginDto): Promise<TokenResponse> {
     const doctor = await this.doctorService.findOneByEmail(loginDto.email);
     if (
       !(doctor && (await bcrypt.compare(loginDto.password, doctor.password)))
@@ -47,7 +54,9 @@ export class DoctorController {
   }
 
   @UseGuards(DoctorGuard)
+  @ApiBearerAuth()
   @Get('profile')
+  @ApiUnauthorizedResponse()
   getProfile(@Request() req) {
     return this.doctorService.findOneById(req.auth.sub);
   }

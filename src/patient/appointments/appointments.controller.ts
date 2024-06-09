@@ -1,9 +1,16 @@
 import { Controller, Get, Param, Request, UseGuards } from '@nestjs/common';
 import { AppointmentsService } from './appointments.service';
 import { PatientGuard } from '../auth/patient.guard';
+import {
+  ApiBearerAuth,
+  ApiNotFoundResponse,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 
 @Controller('patient/appointments')
+@ApiBearerAuth()
 @UseGuards(PatientGuard)
+@ApiUnauthorizedResponse()
 export class AppointmentsController {
   constructor(private readonly appointmentsService: AppointmentsService) {}
 
@@ -13,6 +20,7 @@ export class AppointmentsController {
   }
 
   @Get(':id')
+  @ApiNotFoundResponse()
   findOne(@Request() req, @Param('id') id: string) {
     return this.appointmentsService.findOne(+id, req.auth.sub);
   }

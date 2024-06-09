@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { Appointment } from '../../common/entities/appointment';
+import { PatientAppointmentResponse } from '../../common/responses/patient.appointment.response';
 
 @Injectable()
 export class AppointmentsService {
@@ -11,7 +12,7 @@ export class AppointmentsService {
     private appointmentRepository: Repository<Appointment>,
   ) {}
 
-  findByPatientId(id: number) {
+  findByPatientId(id: number): Promise<PatientAppointmentResponse[]> {
     return this.appointmentRepository.find({
       where: { patient: { id } },
       select: {
@@ -29,7 +30,7 @@ export class AppointmentsService {
     });
   }
 
-  findOne(id: number, patientId: number) {
+  findOne(id: number, patientId: number): Promise<PatientAppointmentResponse> {
     return this.appointmentRepository.findOneOrFail({
       where: { id, patient: { id: patientId } },
       select: {

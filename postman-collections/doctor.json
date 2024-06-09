@@ -1,0 +1,1215 @@
+{
+  "item": [
+    {
+      "name": "doctor",
+      "description": "",
+      "item": [
+        {
+          "name": "appointments",
+          "description": "",
+          "item": [
+            {
+              "id": "999848ae-9d8c-448b-b111-0a9de9cd47c8",
+              "name": "Appointments Controller create",
+              "request": {
+                "name": "Appointments Controller create",
+                "description": {},
+                "url": {
+                  "path": ["doctor", "appointments"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"patientId\": \"<number>\",\n  \"startTime\": \"<dateTime>\",\n  \"reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "df2588e4-eac1-48c8-8eb6-456fc06fe26c",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "appointments"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"patientId\": \"<number>\",\n  \"startTime\": \"<dateTime>\",\n  \"reason\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "header": [],
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "a3fd041d-c297-4379-a45e-a6aeac713b6b",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "appointments"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"patientId\": \"<number>\",\n  \"startTime\": \"<dateTime>\",\n  \"reason\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "header": [],
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "id": "d2c3d944-2c8c-47c2-9ac5-4afbc55193c2",
+              "name": "Appointments Controller find All",
+              "request": {
+                "name": "Appointments Controller find All",
+                "description": {},
+                "url": {
+                  "path": ["doctor", "appointments"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "3aba328d-ef47-4069-9594-4a2e5ff47c78",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "appointments"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "[\n  {\n    \"id\": \"<number>\",\n    \"startTime\": \"<dateTime>\",\n    \"reason\": \"<string>\",\n    \"patient\": {\n      \"id\": \"<number>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"birthDate\": \"<date>\",\n      \"address\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<number>\",\n    \"startTime\": \"<dateTime>\",\n    \"reason\": \"<string>\",\n    \"patient\": {\n      \"id\": \"<number>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"birthDate\": \"<date>\",\n      \"address\": \"<string>\"\n    }\n  }\n]",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                },
+                {
+                  "id": "24c3386d-fe89-4397-8fe5-e7fe561772a6",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "appointments"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "header": [],
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "name": "{id}",
+              "description": "",
+              "item": [
+                {
+                  "id": "ff565a9d-6a95-4b48-bf22-e14a77cc0c5c",
+                  "name": "Appointments Controller find One",
+                  "request": {
+                    "name": "Appointments Controller find One",
+                    "description": {},
+                    "url": {
+                      "path": ["doctor", "appointments", ":id"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) ",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "59ab3c7b-5e6b-4f9a-991f-6495235b3e32",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "appointments", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "body": "{\n  \"id\": \"<number>\",\n  \"startTime\": \"<dateTime>\",\n  \"reason\": \"<string>\",\n  \"patient\": {\n    \"id\": \"<number>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"address\": \"<string>\"\n  }\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "json"
+                    },
+                    {
+                      "id": "02e5c154-ca06-437b-a3c4-12fe18c694d8",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "appointments", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "header": [],
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "665ac30e-f1e1-4cad-bd4f-1e0c7a3c5412",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "appointments", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [],
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                },
+                {
+                  "id": "c55bba44-abff-4bc1-bff6-0e9ac32bb1b8",
+                  "name": "Appointments Controller update",
+                  "request": {
+                    "name": "Appointments Controller update",
+                    "description": {},
+                    "url": {
+                      "path": ["doctor", "appointments", ":id"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) ",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "PATCH",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"startTime\": \"<dateTime>\",\n  \"reason\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "c191d276-5830-4f75-92eb-3dcc7047eab3",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "appointments", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "PATCH",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startTime\": \"<dateTime>\",\n  \"reason\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [],
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "8b66dfa1-707c-4ec4-a30c-ffb8db332c49",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "appointments", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "PATCH",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startTime\": \"<dateTime>\",\n  \"reason\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "header": [],
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                },
+                {
+                  "id": "fe68d156-479d-42f9-9594-4c70f2ef371d",
+                  "name": "Appointments Controller remove",
+                  "request": {
+                    "name": "Appointments Controller remove",
+                    "description": {},
+                    "url": {
+                      "path": ["doctor", "appointments", ":id"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) ",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "method": "DELETE",
+                    "body": {},
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "7d548ce0-6c7c-49ac-9182-79e0a2aa5d5e",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "appointments", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "DELETE",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [],
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "4983392a-ac6b-4690-8da2-a3c0a42d2548",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "appointments", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "DELETE",
+                        "body": {}
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "header": [],
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "patients",
+          "description": "",
+          "item": [
+            {
+              "id": "a7d02334-2d46-4ea0-a81f-e60b2cc62629",
+              "name": "Patients Controller find All",
+              "request": {
+                "name": "Patients Controller find All",
+                "description": {},
+                "url": {
+                  "path": ["doctor", "patients"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "b12aee82-faf2-4182-b87c-f6d523d25d1a",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "patients"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "[\n  {\n    \"id\": \"<number>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"address\": \"<string>\"\n  },\n  {\n    \"id\": \"<number>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"address\": \"<string>\"\n  }\n]",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                },
+                {
+                  "id": "877aeef7-a3c4-488d-9dd0-34a277d8d7c9",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "patients"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "header": [],
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "name": "{id}",
+              "description": "",
+              "item": [
+                {
+                  "id": "6dc6496d-03ed-4890-b6c8-0dc30aa3c88e",
+                  "name": "Patients Controller find One",
+                  "request": {
+                    "name": "Patients Controller find One",
+                    "description": {},
+                    "url": {
+                      "path": ["doctor", "patients", ":id"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) ",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "b4b27f64-f2dc-44a9-96c1-a2ced2d313e9",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "patients", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "body": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"birthDate\": \"<date>\",\n  \"address\": \"<string>\"\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "json"
+                    },
+                    {
+                      "id": "fa3543be-1d35-4f83-bbf4-ef324ae2e911",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "patients", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "header": [],
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "d44860dd-49f1-4130-9fed-09bc09fdd33b",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["doctor", "patients", ":id"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [],
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "register",
+          "description": "",
+          "item": [
+            {
+              "id": "c58c16cb-d2ee-416d-a422-49746351f339",
+              "name": "Doctor Controller register",
+              "request": {
+                "name": "Doctor Controller register",
+                "description": {},
+                "url": {
+                  "path": ["doctor", "register"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"specialization\": \"Optometic\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "f4e43ab3-044c-45ce-b12d-b4eb703e9cb3",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "register"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"specialization\": \"Optometic\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "header": [],
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "description": "",
+          "item": [
+            {
+              "id": "d2949d0f-c75b-4022-924e-084c90c5c49c",
+              "name": "Doctor Controller login",
+              "request": {
+                "name": "Doctor Controller login",
+                "description": {},
+                "url": {
+                  "path": ["doctor", "login"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "44196c20-91ed-40ff-87a9-a66bcc628641",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "login"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"access_token\": \"<string>\"\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                },
+                {
+                  "id": "2df26bf1-2008-4a82-b7be-5653563e3873",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "login"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [],
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "profile",
+          "description": "",
+          "item": [
+            {
+              "id": "5e2b25bb-3f42-4a26-a26b-c327d793eb75",
+              "name": "Doctor Controller get Profile",
+              "request": {
+                "name": "Doctor Controller get Profile",
+                "description": {},
+                "url": {
+                  "path": ["doctor", "profile"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "e809683f-c070-4331-b05b-40a961872a36",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "profile"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"specialization\": \"<string>\"\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                },
+                {
+                  "id": "76715ea0-2fd9-4dd8-bf4c-43e66019a490",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["doctor", "profile"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "header": [],
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ],
+  "info": {
+    "_postman_id": "615e1e9a-3e8d-4e7e-b42c-ca156962cf0a",
+    "name": "Doctor REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

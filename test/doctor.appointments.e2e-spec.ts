@@ -161,12 +161,10 @@ describe('Doctor Appointments (e2e)', () => {
       .delete('/doctor/appointments/1')
       .set('Authorization', 'Bearer ' + token)
       .expect(200);
-    return (
-      request(app.getHttpServer())
-        .get('/doctor/appointments/1')
-        .set('Authorization', 'Bearer ' + token)
-        .expect(404)
-    );
+    return request(app.getHttpServer())
+      .get('/doctor/appointments/1')
+      .set('Authorization', 'Bearer ' + token)
+      .expect(404);
   });
 
   afterEach(() => app.close());

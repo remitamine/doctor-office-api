@@ -5,6 +5,7 @@ import { Repository } from 'typeorm';
 import { CreateAppointmentDto } from './dto/create-appointment.dto';
 import { UpdateAppointmentDto } from './dto/update-appointment.dto';
 import { Appointment } from '../../common/entities/appointment';
+import { DoctorAppointmentResponse } from '../../common/responses/doctor.appointment.response';
 
 @Injectable()
 export class AppointmentsService {
@@ -22,7 +23,7 @@ export class AppointmentsService {
     });
   }
 
-  findByDoctorId(id: number) {
+  findByDoctorId(id: number): Promise<DoctorAppointmentResponse[]> {
     return this.appointmentRepository.find({
       where: { doctor: { id } },
       select: {
@@ -41,7 +42,7 @@ export class AppointmentsService {
     });
   }
 
-  findOne(id: number, doctorId: number) {
+  findOne(id: number, doctorId: number): Promise<DoctorAppointmentResponse> {
     return this.appointmentRepository.findOneOrFail({
       where: { id, doctor: { id: doctorId } },
       select: {

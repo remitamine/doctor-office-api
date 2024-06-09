@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 
 import { Doctor } from '../common/entities/doctor';
 import { CreateDoctorDto } from './dto/create-doctor.dto';
+import { DoctorResponse } from '../common/responses/doctor.response';
 
 @Injectable()
 export class DoctorService {
@@ -16,7 +17,7 @@ export class DoctorService {
     return this.doctorRepository.insert(createDoctorDto);
   }
 
-  findOneById(id: number) {
+  findOneById(id: number): Promise<DoctorResponse> {
     return this.doctorRepository.findOneOrFail({
       where: { id },
       select: { name: true, email: true, specialization: true },

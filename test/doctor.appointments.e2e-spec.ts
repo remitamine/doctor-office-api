@@ -128,7 +128,7 @@ describe('Doctor Appointments (e2e)', () => {
         startTime: '2025-01-02T12:00:00Z',
       })
       .set('Authorization', 'Bearer ' + token)
-      .expect(200);
+      .expect(204);
     return request(app.getHttpServer())
       .get('/doctor/appointments/1')
       .set('Authorization', 'Bearer ' + token)
@@ -160,7 +160,7 @@ describe('Doctor Appointments (e2e)', () => {
     await request(app.getHttpServer())
       .delete('/doctor/appointments/1')
       .set('Authorization', 'Bearer ' + token)
-      .expect(200);
+      .expect(204);
     return request(app.getHttpServer())
       .get('/doctor/appointments/1')
       .set('Authorization', 'Bearer ' + token)

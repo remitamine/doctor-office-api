@@ -8,6 +8,8 @@ import {
   Delete,
   Request,
   UseGuards,
+  HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
 import { AppointmentsService } from './appointments.service';
 import { CreateAppointmentDto } from './dto/create-appointment.dto';
@@ -46,6 +48,7 @@ export class AppointmentsController {
     return this.appointmentsService.findOne(+id, req.auth.sub);
   }
 
+  @HttpCode(HttpStatus.NO_CONTENT)
   @Patch(':id')
   async update(
     @Request() req,
@@ -60,8 +63,10 @@ export class AppointmentsController {
     return;
   }
 
+  @HttpCode(HttpStatus.NO_CONTENT)
   @Delete(':id')
-  remove(@Request() req, @Param('id') id: string) {
-    return this.appointmentsService.remove(+id, req.auth.sub);
+  async remove(@Request() req, @Param('id') id: string) {
+    await this.appointmentsService.remove(+id, req.auth.sub);
+    return;
   }
 }
